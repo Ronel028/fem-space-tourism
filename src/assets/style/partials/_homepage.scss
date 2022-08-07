@@ -1,0 +1,115 @@
+@import './variables';
+@import './global';
+
+.homepage--container{
+    width: 100%;
+    height: auto;
+    background-image: url('/src/assets/images/home/background-home-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (max-width: rem(884)){
+        background-image: url('/src/assets/images/home/background-home-tablet.jpg');
+    }
+
+    .homepage{
+        min-height: 100vh;
+        height: auto;
+        padding-bottom: rem(131);
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: end;
+
+        @media screen and (max-width: rem(884)){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, auto);
+            row-gap: rem(156);
+            justify-items: center;
+            padding-top: rem(202);
+            text-align: center;
+        }
+        @media screen and (max-height: rem(640)){
+            padding-top: rem(387);
+        }
+        @media screen and (max-width: rem(375)){
+            row-gap: rem(81);
+        }
+
+        .left-content{
+            h2{
+                margin-bottom: rem(38);
+                @media screen and (max-width: rem(884)){
+                    font-size: rem(20);
+                }
+                @media screen and (max-width: rem(375)){
+                    font-size: rem(16);
+                }
+            }
+            h1{
+                margin-bottom: rem(55);
+
+                @media screen and (max-width: rem(522)){
+                    font-size: 28vw;
+                }
+                @media screen and (max-width: rem(375)){
+                    font-size: rem(80);
+                }
+            }
+            p{
+                max-width: rem(437);
+                text-align: justify;
+
+                @media screen and (max-width: rem(884)){
+                    max-width: none;
+                    text-align: center;
+                }
+                @media screen and (max-width: rem(522)){
+                    font-size: 4vw;
+                }
+                @media screen and (max-width: rem(375)){
+                    font-size: rem(15);
+                }
+            }
+        }
+        
+        .explore{
+            width: rem(274);
+            height: rem(274);
+            border-radius: 50%;
+            background-color: $White;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: end;
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            @media screen and (max-width: rem(884)){
+                justify-self: center;
+            }
+            @media screen and (max-width: rem(522)){
+                width: rem(200);
+                height: rem(200);
+            }
+            @media screen and (max-width: rem(375)){
+                width: rem(150);
+                height: rem(150);
+            }
+
+            &:hover{
+                outline: rem(50) solid rgba(255, 255, 255, 0.52);
+            }
+    
+            p{
+                color: $Dark-Rift;
+                @media screen and (max-width: rem(375)){
+                    font-size: rem(20);
+                }
+            }
+        }
+    }
+}

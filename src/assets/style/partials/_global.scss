@@ -1,0 +1,88 @@
+@import './variables';
+
+.heading-1, .heading-2, .heading-3, .heading-4, .subheading-1{
+    font-family: $font-bellefair;
+}
+.heading-1, 
+.heading-2, 
+.heading-3, 
+.heading-4, 
+.heading-5,
+.subheading-1,
+.subheading-2,
+.nav-text,
+p,
+a{
+    color: $White;
+}
+.heading-1, 
+.heading-2, 
+.heading-3, 
+.heading-4, 
+.heading-5, 
+.subheading-1, 
+.subheading-2, 
+.nav-text, 
+p{
+    font-weight: 400;
+}
+
+.heading-1{
+    font-size: rem(150);
+}
+.heading-2{
+    font-size: rem(100);
+}
+.heading-3{
+    font-size: rem(56);
+}
+.heading-4{
+    font-size: rem(32);
+}
+.heading-5{
+    font-size: rem(28);
+    letter-spacing: rem(4.75);
+}
+
+// subheading
+.heading-5, .subheading-2, .nav-text, p, a{
+    font-family: $font-barlow;
+}
+.subheading-1{
+    font-size: rem(28);
+}
+.subheading-2{
+    font-size: rem(14);
+    letter-spacing: rem(2.35);
+}
+.nav-text, a{
+    font-size: rem(16);
+    letter-spacing: rem(2.7);
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+p{
+    font-size: rem(18);
+    line-height: rem(28);
+}
+.color-icy{
+    color: $Icy-Plains;
+}
+
+// container
+.container{
+    width: 90%;
+    max-width: rem(1108);
+    margin: 0 auto;
+}
+
+.display{
+    display: none;
+}
+.d-flex{
+    display: flex !important;
+}

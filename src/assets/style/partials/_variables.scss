@@ -1,0 +1,16 @@
+
+
+// color
+$Dark-Rift: hsl(230°, 35%, 7%);
+$Icy-Plains: hsl(231°, 77%, 90%);
+$White: hsl(0°, 0%, 100%);
+
+// font
+$font-barlow: 'Barlow Condensed', sans-serif;
+$font-bellefair: 'Bellefair', serif;
+
+// convert px to rem
+@function rem($value) {
+    $remValue: ($value / 16) + rem; 
+    @return $remValue;
+}

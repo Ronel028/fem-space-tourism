@@ -1,0 +1,71 @@
+@import './variables';
+@import './global';
+
+.destination--container{
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    background-image: url('/src/assets/images/destination/background-destination-desktop.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: rem(212);
+    color: $White;
+
+    .destination{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        row-gap: rem(70);
+
+        .title{
+            h2{
+                
+                span{
+                    margin-right: rem(30);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .destination-planet{
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: auto;
+            align-items: center;
+
+            .planet-name{
+                ul{
+                    display: flex;
+                    align-items: center;
+                    gap: rem(33);
+                    margin-bottom: rem(55);
+                    li{
+                        a{
+                            color: $Icy-Plains;
+                        }
+                    }
+                }
+
+                .planet-choose{
+                    .planet-description{
+
+                        p{
+                            margin-bottom: rem(54);
+                        }
+                        border-bottom: 2px solid $White;
+                        margin-bottom: rem(29);
+                    }
+
+                    .planet-distance{
+                        display: flex;
+                        align-items: center;
+                        gap: rem(79);
+
+                    }
+                }
+            }
+        }
+    }
+
+}

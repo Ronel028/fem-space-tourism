@@ -1,0 +1,160 @@
+@import './variables';
+@import './global';
+
+.nav-bar{
+    position: fixed;
+    top: rem(35);
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: rem(884)){
+        top: 0;
+        gap: rem(20);
+    }
+    @media screen and (max-width: rem(586)){
+        padding-left: rem(24);
+        padding-right: rem(24);
+        padding-top: rem(24);
+    }
+
+    .logo{
+        margin-left: rem(45);
+        @media screen and (max-width: rem(586)){
+            margin-left: 0;
+        }
+    }
+
+    // menu button
+    .menu-icon{
+        display: none;
+        @media screen and (max-width: rem(586)){
+            display: block;
+            z-index: 999;
+        }
+
+    }
+
+    .links{
+        height: rem(94);
+        padding-left: rem(118);
+        padding-right: 11%;
+
+        // background: #d0d6f921;
+        // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        // backdrop-filter: blur(6px);
+        // -webkit-backdrop-filter: blur(6px);
+        /* From https://css.glass */
+        /* From https://css.glass */
+        background: rgba(208, 214, 249, 0.26);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: rem(1064)){
+            padding-left: rem(48);
+            padding-right: rem(45);
+        }
+        @media screen and (max-width: rem(586)){
+            display: none;
+            align-items: flex-start;
+            padding-top: rem(118);
+            padding-right: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
+            z-index: 998;
+        }
+
+
+        ul{
+            display: flex;
+            align-items: center;
+            gap: rem(50);
+
+            @media screen and (max-width: rem(1064)){
+                gap: rem(37);
+            }
+            @media screen and (max-width: rem(586)){
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: baseline;
+            }
+
+            li{
+                position: relative;
+
+                @media screen and (max-width: rem(586)){
+                    width: 100%;
+                }
+
+                a{
+                    span{
+                        font-weight: 700;
+                        margin-right: rem(12);
+
+                        @media screen and (max-width: rem(884)){
+                            display: none;
+                        }
+                        @media screen and (max-width: rem(586)){
+                            display: inline-block;
+                        }
+                    }
+                    cursor: pointer;
+
+                    @media screen and (max-width: rem(884)){
+                        font-size: rem(14);
+                    }
+                    @media screen and (max-width: rem(586)){
+                        font-size: rem(16);
+                    }
+                }
+
+                &:hover::after{
+                    content: "";
+                    width: 100%;
+                    height: rem(3);
+                    background-color: $White;
+                    opacity: 50%;
+                    position: absolute;
+                    top: rem(53);
+                    right: 0;
+
+                    @media screen and (max-width: rem(586)){
+                        height: rem(31);
+                        width: rem(3);
+                        top: -9px;
+                        opacity: 100%;
+                    }
+
+                }
+
+                &.active::after{
+                    content: "";
+                    width: 100%;
+                    height: rem(3);
+                    background-color: $White;
+                    position: absolute;
+                    top: rem(53);
+                    right: 0;
+
+                    @media screen and (max-width: rem(586)){
+                        height: rem(31);
+                        width: rem(3);
+                        top: -9px;
+                    }
+                }
+
+            }
+        }
+    }
+}
