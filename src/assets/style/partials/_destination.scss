@@ -9,7 +9,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: rem(212);
     color: $White;
 
     .destination{
@@ -20,7 +19,10 @@
 
         .title{
             h2{
-                
+                @media screen and(max-width: rem(492)){
+                    font-size: rem(16);
+                    text-align: center;
+                }
                 span{
                     margin-right: rem(30);
                     font-weight: 700;
@@ -34,15 +36,77 @@
             grid-template-rows: auto;
             align-items: center;
 
+            @media screen and (max-width: rem(1102)){
+                column-gap: rem(30);
+            }
+            @media screen and (max-width: rem(768)){
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, auto);
+                row-gap: rem(53);
+                justify-items: center;
+            }
+
+            .planet{
+
+                @media screen and (max-width: rem(1102)){
+                    width: 100%;
+                    height: auto;
+                }
+                @media screen and (max-width: rem(768)){
+                    width: rem(300);
+                    height: auto;
+                }
+                @media screen and(max-width: rem(375)){
+                    width: rem(170);
+                }
+
+                img{
+
+                    @media screen and (max-width: rem(1102)){
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                    
+                }
+            }
+
             .planet-name{
                 ul{
                     display: flex;
                     align-items: center;
                     gap: rem(33);
                     margin-bottom: rem(55);
+
+                    @media screen and (max-width: rem(768)){
+                        justify-content: center;
+                    }
+
                     li{
                         a{
                             color: $Icy-Plains;
+                            position: relative;
+                            cursor: pointer;
+
+                            &:hover::before{
+                                content: "";
+                                width: 100%;
+                                height: rem(3);
+                                background-color: $White;
+                                opacity: 50%;
+                                position: absolute;
+                                bottom: rem(-12);
+                                left: 0;
+                            }
+                            &.active::before{
+                                content: "";
+                                width: 100%;
+                                height: rem(3);
+                                background-color: $White;
+                                position: absolute;
+                                bottom: rem(-12);
+                                left: 0;
+                            }
                         }
                     }
                 }
@@ -50,10 +114,36 @@
                 .planet-choose{
                     .planet-description{
 
+                        @media screen and (max-width: rem(768)){
+                            text-align: center;
+                        }
+
+                        h1{
+                            @media screen and (max-width: rem(962)){
+                                font-size: 10vw;
+                            }
+                            @media screen and (max-width: rem(768)){
+                                font-size: rem(80);
+                            }
+                            @media screen and (max-width: rem(768)){
+                                font-size: rem(56);
+                            }
+                        }
+
                         p{
                             margin-bottom: rem(54);
+
+                            @media screen and (max-width: rem(962)){
+                                font-size: 2vw;
+                            }
+                            @media screen and (max-width: rem(768)){
+                                font-size: rem(16);
+                            }
+                            @media screen and (max-width: rem(768)){
+                                font-size: rem(15);
+                            }
                         }
-                        border-bottom: 2px solid $White;
+                        border-bottom: 1px solid #383B4B;
                         margin-bottom: rem(29);
                     }
 
@@ -61,6 +151,15 @@
                         display: flex;
                         align-items: center;
                         gap: rem(79);
+
+                        @media screen and (max-width: rem(768)){
+                            justify-content: center;
+                            text-align: center;
+                        }
+                        @media screen and(max-width: rem(375)){
+                            flex-direction: column;
+                            gap: rem(32);
+                        }
 
                     }
                 }

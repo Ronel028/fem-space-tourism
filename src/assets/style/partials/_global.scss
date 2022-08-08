@@ -86,3 +86,13 @@ p{
 .d-flex{
     display: flex !important;
 }
+.py-1{
+    padding-top: rem(209);
+    padding-bottom: rem(112);
+}
+.container-md{
+    @media screen and (max-width: rem(768)){
+        max-width: rem(564);
+        margin: 0 auto;
+    }
+}
