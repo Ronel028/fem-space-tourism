@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Planet from '../images/destination/image-mars.webp'
+import { destinations } from '../../../data.json';
 
 function Destination(){
 
@@ -10,6 +11,78 @@ function Destination(){
         europa: false,
         titan: false
     });
+
+    const [destination, setDestination] = useState({
+        planetName: '',
+        planetDescription: '',
+        planetImages: '',
+        planetDistance: '',
+        planetTravel: ''
+    })
+
+    function choosePlanet(){
+        if(active.moon){
+            destinations.filter(item =>{
+                if(item.name === 'Moon'){
+                    setDestination(function(currentState){
+                        return {
+                            ...currentState,
+                            planetName: item.name,
+                            planetImages: item.images.webp,
+                            planetDescription: item.description,
+                            planetDistance: item.distance,
+                            planetTravel: item.travel
+                        }
+                    })
+                }
+            })
+        }else if(active.mars){
+                destinations.filter(item =>{
+                    if(item.name === 'Mars'){
+                        setDestination(function(currentState){
+                            return {
+                                ...currentState,
+                                planetName: item.name,
+                                planetImages: item.images.webp,
+                                planetDescription: item.description,
+                                planetDistance: item.distance,
+                                planetTravel: item.travel
+                            }
+                        })
+                    }
+                })
+        }else if(active.europa){
+                destinations.filter(item =>{
+                    if(item.name === 'Europa'){
+                        setDestination(function(currentState){
+                            return {
+                                ...currentState,
+                                planetName: item.name,
+                                planetImages: item.images.webp,
+                                planetDescription: item.description,
+                                planetDistance: item.distance,
+                                planetTravel: item.travel
+                            }
+                        })
+                    }
+                })
+        }else if(active.titan){
+                destinations.filter(item =>{
+                    if(item.name === 'Titan'){
+                        setDestination(function(currentState){
+                            return {
+                                ...currentState,
+                                planetName: item.name,
+                                planetImages: item.images.webp,
+                                planetDescription: item.description,
+                                planetDistance: item.distance,
+                                planetTravel: item.travel
+                        }
+                    })
+                }
+            })
+        }
+    }
 
     function handleClick(event){
         const { name } = event.target;
@@ -56,11 +129,11 @@ function Destination(){
         }
     }
 
+    console.log('render')
 
-
-
-
-
+    useEffect(()=>{
+        choosePlanet()
+    }, [active])
 
     return (
         <section className="destination--container py-1">
@@ -72,7 +145,7 @@ function Destination(){
                 </div>
                 <div className="destination-planet container-md">
                     <div className="planet">
-                        <img src={Planet} alt="Mars" />
+                        <img src={destination.planetImages} alt="Mars" />
                     </div>
                     <div className="planet-name">
                         <ul>
@@ -113,29 +186,28 @@ function Destination(){
                                 </a>
                             </li>
                         </ul>
+
                         {/* PLANET CHOOSE */}
                         <div className="planet-choose">
                             <div className="planet-description">
-                                <h1 className="heading-2">MOON</h1>
+                                <h1 className="heading-2">{destination.planetName}</h1>
                                 <p className="color-icy">
-                                    See our planet as you’ve never seen it before. A perfect 
-                                    relaxing trip away to help regain perspective and come 
-                                    back refreshed. While you’re there, take in some history 
-                                    by visiting the Luna 2 and Apollo 11 landing sites.
+                                    {destination.planetDescription}
                                 </p>
                             </div>
                             <div className="planet-distance">
                                 <div className="distance">
                                     <p className="subheading-2 color-icy">AVG. DISTANCE</p>
-                                    <h3 className="subheading-1">384,400 km</h3>
+                                    <h3 className="subheading-1">{destination.planetDistance}</h3>
                                 </div>
                                 <div className="travel-time">
                                     <p className="subheading-2 color-icy">EST. TRAVEL TIME</p>
-                                    <h3 className="subheading-1">3 days</h3>
+                                    <h3 className="subheading-1">{destination.planetTravel}</h3>
                                 </div>
                             </div>
                         </div>
-                        
+                        {/* end */}
+
                     </div>
                 </div>
             </div>
