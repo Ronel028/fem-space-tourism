@@ -79,10 +79,10 @@ function Crew(){
 
     return (
         <section className="crew--container">
-            <div className="crew container pt-1">
+            <div className="crew container py-1">
                 <div className="title">
                     <h2 className="heading-5">
-                        <span className="span-1">02</span>MEET YOU CREW
+                        <span className="span-1">02</span>MEET YOUR CREW
                     </h2>
                 </div>
                 <div className="crew-profile">
@@ -113,7 +113,7 @@ function Crew(){
                             ></div>
                         </div>
                     </div>
-                    <div className="crew-profile">
+                    <div className="crew-profile-image">
                         <img src={crewName.image} alt={crewName.name} />
                     </div>
                 </div>

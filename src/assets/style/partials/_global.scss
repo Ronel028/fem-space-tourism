@@ -89,6 +89,10 @@ p{
 .py-1{
     padding-top: rem(209);
     padding-bottom: rem(112);
+
+    @media screen and (max-width: rem(904)){
+        padding-bottom: 0;
+    }
 }
 .pt-1{
     padding-top: rem(209);
