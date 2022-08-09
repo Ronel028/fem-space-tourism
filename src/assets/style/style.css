@@ -845,6 +845,9 @@ p {
     text-align: center;
   }
 }
+.destination--container .destination .destination-planet .planet-name .planet-choose .planet-description h1 {
+  text-transform: uppercase;
+}
 @media screen and (max-width: 60.125rem) {
   .destination--container .destination .destination-planet .planet-name .planet-choose .planet-description h1 {
     font-size: 10vw;

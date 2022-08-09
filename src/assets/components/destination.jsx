@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Planet from '../images/destination/image-mars.webp'
+import DestinationData from './destinationData';
 import { destinations } from '../../../data.json';
 
 function Destination(){
@@ -20,70 +20,39 @@ function Destination(){
         planetTravel: ''
     })
 
+    // filter planet my name
+    function choose(planetName){
+        destinations.filter(item =>{
+            if(item.name === planetName){
+                setDestination(function(currentState){
+                    return {
+                        ...currentState,
+                        planetName: item.name,
+                        planetImages: item.images.webp,
+                        planetDescription: item.description,
+                        planetDistance: item.distance,
+                        planetTravel: item.travel
+                    }
+                })
+            }
+        })
+        
+    }
+
+    // condition to display what the planet is active by click
     function choosePlanet(){
         if(active.moon){
-            destinations.filter(item =>{
-                if(item.name === 'Moon'){
-                    setDestination(function(currentState){
-                        return {
-                            ...currentState,
-                            planetName: item.name,
-                            planetImages: item.images.webp,
-                            planetDescription: item.description,
-                            planetDistance: item.distance,
-                            planetTravel: item.travel
-                        }
-                    })
-                }
-            })
+            choose('Moon')
         }else if(active.mars){
-                destinations.filter(item =>{
-                    if(item.name === 'Mars'){
-                        setDestination(function(currentState){
-                            return {
-                                ...currentState,
-                                planetName: item.name,
-                                planetImages: item.images.webp,
-                                planetDescription: item.description,
-                                planetDistance: item.distance,
-                                planetTravel: item.travel
-                            }
-                        })
-                    }
-                })
+            choose('Mars')
         }else if(active.europa){
-                destinations.filter(item =>{
-                    if(item.name === 'Europa'){
-                        setDestination(function(currentState){
-                            return {
-                                ...currentState,
-                                planetName: item.name,
-                                planetImages: item.images.webp,
-                                planetDescription: item.description,
-                                planetDistance: item.distance,
-                                planetTravel: item.travel
-                            }
-                        })
-                    }
-                })
+            choose('Europa')
         }else if(active.titan){
-                destinations.filter(item =>{
-                    if(item.name === 'Titan'){
-                        setDestination(function(currentState){
-                            return {
-                                ...currentState,
-                                planetName: item.name,
-                                planetImages: item.images.webp,
-                                planetDescription: item.description,
-                                planetDistance: item.distance,
-                                planetTravel: item.travel
-                        }
-                    })
-                }
-            })
+            choose('Titan')
         }
     }
 
+    // click event for add a active indicator of what planet is active
     function handleClick(event){
         const { name } = event.target;
         if(name === 'moon'){
@@ -129,88 +98,17 @@ function Destination(){
         }
     }
 
-    console.log('render')
-
     useEffect(()=>{
         choosePlanet()
     }, [active])
 
     return (
         <section className="destination--container py-1">
-            <div className="destination container">
-                <div className="title">
-                    <h2 className="heading-5">
-                        <span>01</span>PICK YOUR DESTINATION
-                    </h2>
-                </div>
-                <div className="destination-planet container-md">
-                    <div className="planet">
-                        <img src={destination.planetImages} alt="Mars" />
-                    </div>
-                    <div className="planet-name">
-                        <ul>
-                            <li>
-                                <a
-                                    className={active.moon ? 'active' : ''}
-                                    name="moon"
-                                    onClick={handleClick}
-                                >
-                                    MOON
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className={active.mars ? 'active' : ''}
-                                    name="mars"
-                                    onClick={handleClick}
-                                >
-                                    MARS
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className={active.europa ? 'active' : ''}
-                                    name="europa"
-                                    onClick={handleClick}
-                                >
-                                    EUROPA
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className={active.titan ? 'active' : ''}
-                                    name="titan"
-                                    onClick={handleClick}
-                                >
-                                    TITAN
-                                </a>
-                            </li>
-                        </ul>
-
-                        {/* PLANET CHOOSE */}
-                        <div className="planet-choose">
-                            <div className="planet-description">
-                                <h1 className="heading-2">{destination.planetName}</h1>
-                                <p className="color-icy">
-                                    {destination.planetDescription}
-                                </p>
-                            </div>
-                            <div className="planet-distance">
-                                <div className="distance">
-                                    <p className="subheading-2 color-icy">AVG. DISTANCE</p>
-                                    <h3 className="subheading-1">{destination.planetDistance}</h3>
-                                </div>
-                                <div className="travel-time">
-                                    <p className="subheading-2 color-icy">EST. TRAVEL TIME</p>
-                                    <h3 className="subheading-1">{destination.planetTravel}</h3>
-                                </div>
-                            </div>
-                        </div>
-                        {/* end */}
-
-                    </div>
-                </div>
-            </div>
+            <DestinationData 
+                active={active}
+                clickEvent={handleClick}
+                destination={destination}
+            />
         </section>
         
     )

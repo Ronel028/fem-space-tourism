@@ -119,6 +119,7 @@
                         }
 
                         h1{
+                            text-transform: uppercase;
                             @media screen and (max-width: rem(962)){
                                 font-size: 10vw;
                             }
