@@ -9,7 +9,7 @@ function DestinationData(props){
         <div className="destination container">
                 <div className="title">
                     <h2 className="heading-5">
-                        <span>01</span>PICK YOUR DESTINATION
+                        <span className="span-1">01</span>PICK YOUR DESTINATION
                     </h2>
                 </div>
                 <div className="destination-planet container-md">

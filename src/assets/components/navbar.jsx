@@ -5,6 +5,7 @@ import Logo from '../images/shared/logo.svg';
 import HamburgerIcon from '../images/shared/icon-hamburger.svg'
 import CloseMenu from '../images/shared/icon-close.svg'
 
+
 function Navbar(){
 
     const navigate = useNavigate();
@@ -53,6 +54,7 @@ function Navbar(){
                     tech: false
                 }
             })
+            navigate('/crew')
         }
         else if(name === 'technology'){
             setActive(function(current){

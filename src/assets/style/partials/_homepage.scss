@@ -12,6 +12,9 @@
     @media screen and (max-width: rem(884)){
         background-image: url('/src/assets/images/home/background-home-tablet.jpg');
     }
+    @media screen and (max-width: rem(375)){
+        background-image: url('/src/assets/images/home/background-home-mobile.jpg');
+    }
 
     .homepage{
         min-height: 100vh;

@@ -1,5 +1,7 @@
 import React from "react";
 
+import NavBar from './navbar';
+
 function Homepage(){
     return (
         <header className="homepage--container">

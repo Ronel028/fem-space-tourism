@@ -1,0 +1,57 @@
+@import './variables';
+@import './global';
+
+.crew--container{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-image: url('/src/assets/images/crew/background-crew-desktop.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .crew{
+        .title{
+            margin-bottom: rem(18);
+        }
+        
+        .crew-profile{
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: auto;
+            align-items: center;
+            column-gap: rem(95);
+
+            .crew-info{
+                h4{
+                    opacity: 50.42%;
+                    margin-bottom: rem(24);
+                    text-transform: uppercase;
+                }
+                h2{
+                    margin-bottom: rem(42);
+                    text-transform: uppercase;
+                }
+                p{
+                    margin-bottom: rem(129);
+                }
+            }
+
+            .circle-container{
+                display: flex;
+                align-items: center;
+                gap: rem(24);
+                .circle{
+                    width: rem(15);
+                    height: rem(15);
+                    background-color: #979797;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                .circle.active{
+                    background-color: $White;
+                }
+            }
+        }
+    }
+}

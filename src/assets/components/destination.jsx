@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import DestinationData from './destinationData';
+import DestinationData from './partials/destinationData';
 import { destinations } from '../../../data.json';
+import Navbar from "./navbar";
 
 function Destination(){
 
