@@ -1,3 +1,5 @@
+Live preview: https://fem-space-tourism-landingpage.vercel.app/
+
 # Frontend Mentor - Space tourism website
 
 ![Design preview for the Space tourism website coding challenge](./preview.jpg)
