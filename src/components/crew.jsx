@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import { crew } from '../../../data.json';
+import { crew } from '../../public/data.json';
 
 function Crew(){
+
 
     const [active, setActive] = useState({
         circle1: true,

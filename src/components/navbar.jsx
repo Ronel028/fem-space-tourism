@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-import Logo from '../images/shared/logo.svg';
-import HamburgerIcon from '../images/shared/icon-hamburger.svg'
-import CloseMenu from '../images/shared/icon-close.svg'
+import Logo from '../assets/images/shared/logo.svg';
+import HamburgerIcon from '../assets/images/shared/icon-hamburger.svg'
+import CloseMenu from '../assets/images/shared/icon-close.svg'
 
 
 function Navbar(){

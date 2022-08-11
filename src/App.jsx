@@ -2,11 +2,11 @@ import React from "react"
 import { Routes, Route } from 'react-router-dom'
 
 // components
-import Homepage from "./assets/components/home"
-import Navbar from './assets/components/navbar'
-import Destination from './assets/components/destination'
-import Crew from './assets/components/crew';
-import Technology from "./assets/components/technology"
+import Homepage from "./components/home"
+import Navbar from './components/navbar'
+import Destination from './components/destination'
+import Crew from './components/crew';
+import Technology from "./components/technology"
 
 function App() {
 

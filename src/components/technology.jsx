@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { technology } from '../../../data.json'
+import { technology } from '../../public/data.json';
 
 function Technology(){
 
