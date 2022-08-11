@@ -71,8 +71,7 @@ function Crew(){
             chooseActive(false, false, false, true)
         }
     }
-
-    console.log('render')
+    
     useEffect(function(){
         yourCrew()
     }, [active])
@@ -87,31 +86,36 @@ function Crew(){
                 </div>
                 <div className="crew-profile">
                     <div className="crew-info">
-                        <h4 className="heading-4">{crewName.role}</h4>
-                        <h2 className="heading-3">{crewName.name}</h2>
-                        <p>{crewName.bio}</p>
-                        <div className="circle-container">
-                            <div 
-                                className={active.circle1 ? 'circle active' : 'circle'}
-                                id="circle-1"
-                                onClick={handleClick}
-                            ></div>
-                            <div 
-                                className={active.circle2 ? 'circle active' : 'circle'}
-                                id="circle-2"
-                                onClick={handleClick}
-                            ></div>
-                            <div 
-                                className={active.circle3 ? 'circle active' : 'circle'}
-                                id="circle-3"
-                                onClick={handleClick}
-                            ></div>
-                            <div 
-                                className={active.circle4 ? 'circle active' : 'circle'}
-                                id="circle-4"
-                                onClick={handleClick}
-                            ></div>
+                        <div className="crew-content">
+                            <h4 className="heading-4">{crewName.role}</h4>
+                            <h2 className="heading-3">{crewName.name}</h2>
+                            <p className="color-icy">{crewName.bio}</p>
                         </div>
+                        <div className="circle-dots">
+                            <div className="circle-container">
+                                <div 
+                                    className={active.circle1 ? 'circle active' : 'circle'}
+                                    id="circle-1"
+                                    onClick={handleClick}
+                                ></div>
+                                <div 
+                                    className={active.circle2 ? 'circle active' : 'circle'}
+                                    id="circle-2"
+                                    onClick={handleClick}
+                                ></div>
+                                <div 
+                                    className={active.circle3 ? 'circle active' : 'circle'}
+                                    id="circle-3"
+                                    onClick={handleClick}
+                                ></div>
+                                <div 
+                                    className={active.circle4 ? 'circle active' : 'circle'}
+                                    id="circle-4"
+                                    onClick={handleClick}
+                                ></div>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div className="crew-profile-image">
                         <img src={crewName.image} alt={crewName.name} />

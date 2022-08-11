@@ -66,6 +66,7 @@ function Navbar(){
                     tech: true
                 }
             })
+            navigate('/technology')
         }
     }
 

@@ -53,49 +53,29 @@ function Destination(){
         }
     }
 
+    function destinationPlanet(moon, mars, europa, titan){
+        setActive(function(currentState){
+            return {
+                ...currentState,
+                moon: moon,
+                mars: mars,
+                europa: europa,
+                titan: titan
+            }
+        })
+    }
+
     // click event for add a active indicator of what planet is active
     function handleClick(event){
         const { name } = event.target;
         if(name === 'moon'){
-            setActive(function(currentState){
-                return {
-                    ...currentState,
-                    moon: true,
-                    mars: false,
-                    europa: false,
-                    titan: false
-                }
-            })
+            destinationPlanet(true, false, false, false)
         }else if(name === 'mars'){
-            setActive(function(currentState){
-                return {
-                    ...currentState,
-                    moon: false,
-                    mars: true,
-                    europa: false,
-                    titan: false
-                }
-            })
+            destinationPlanet(false, true, false, false)
         }else if(name === 'europa'){
-            setActive(function(currentState){
-                return {
-                    ...currentState,
-                    moon: false,
-                    mars: false,
-                    europa: true,
-                    titan: false
-                }
-            })
+            destinationPlanet(false, false, true, false)
         }else if(name === 'titan'){
-            setActive(function(currentState){
-                return {
-                    ...currentState,
-                    moon: false,
-                    mars: false,
-                    europa: false,
-                    titan: true
-                }
-            })
+            destinationPlanet(false, false, false, true)
         }
     }
 
@@ -104,7 +84,7 @@ function Destination(){
     }, [active])
 
     return (
-        <section className="destination--container py-1">
+        <section className="destination--container py-2">
             <DestinationData 
                 active={active}
                 clickEvent={handleClick}

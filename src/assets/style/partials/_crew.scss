@@ -10,6 +10,13 @@
     background-position: center;
     background-size: cover;
 
+    @media screen and (max-width: rem(768)){
+        background-image: url('/src/assets/images/crew/background-crew-tablet.jpg');
+    }
+    @media screen and (max-width: rem(375)){
+        background-image: url('/src/assets/images/crew/background-crew-mobile.jpg');
+    }
+
     .crew{
         position: relative;
         min-height: 100vh;
@@ -26,6 +33,11 @@
             @media screen and (max-width: rem(904)){
                 margin-bottom: rem(94);
             }
+            h2{
+                @media screen and (max-width: rem(504)){
+                    font-size: 6vw;
+                }
+            }
         }
         
         .crew-profile{
@@ -40,71 +52,112 @@
                 grid-template-rows: repeat(2, auto);
                 row-gap: rem(40);
             }
+            @media screen and (max-width: rem(375)){
+                grid-template-areas: 'crewImage' 'crewProfile';
+            }
 
 
             .crew-info{
 
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, auto);
+
                 @media screen and (max-width: rem(904)){
                     text-align: center;
                 }
-
-                h4{
-                    opacity: 50.42%;
-                    margin-bottom: rem(24);
-                    text-transform: uppercase;
-
-                    @media screen and(max-width: rem(988)){
-                        font-size: rem(24);
-                    }
-
+                @media screen and (max-width: rem(375)){
+                    grid-area: crewProfile;
+                    grid-template-areas: 'dots' 'info';
+                    row-gap: rem(32);
                 }
-                h2{
-                    margin-bottom: rem(42);
-                    text-transform: uppercase;
 
-                    @media screen and(max-width: rem(1148)){
-                        font-size: 5vw;
+                .crew-content{
+
+                    @media screen and (max-width: rem(375)){
+                        grid-area: info;
                     }
-                    
-                    @media screen and(max-width: rem(988)){
-                        font-size: rem(40);
+
+                    h4{
+                        opacity: 50.42%;
+                        margin-bottom: rem(24);
+                        text-transform: uppercase;
+    
+                        @media screen and(max-width: rem(988)){
+                            font-size: rem(24);
+                        }
+                        @media screen and (max-width: rem(375)){
+                            font-size: rem(16);
+                        }
+    
+                    }
+                    h2{
+                        margin-bottom: rem(42);
+                        text-transform: uppercase;
+    
+                        @media screen and(max-width: rem(1148)){
+                            font-size: 5vw;
+                        }
+                        
+                        @media screen and(max-width: rem(988)){
+                            font-size: rem(40);
+                        }
+                        @media screen and (max-width: rem(504)){
+                            font-size: 8vw;
+                        }
+                        @media screen and (max-width: rem(375)){
+                            font-size: rem(24);
+                            margin-bottom: rem(32);
+                        }
+                    }
+                    p{
+                        margin-bottom: rem(129);
+                        max-width: rem(444);
+    
+                        @media screen and(max-width: rem(988)){
+                            font-size: rem(16);
+                            max-width: rem(359);
+                        }
+                        @media screen and (max-width: rem(904)){
+                            max-width: none;
+                            margin-bottom: rem(40);
+                        }
+                        @media screen and (max-width: rem(375)){
+                            font-size: rem(15);
+                        }
                     }
                 }
-                p{
-                    margin-bottom: rem(129);
-                    max-width: rem(444);
 
-                    @media screen and(max-width: rem(988)){
-                        font-size: rem(16);
-                        max-width: rem(359);
-                    }
+            }
+
+            .circle-dots{
+
+                @media screen and (max-width: rem(375)){
+                    grid-area: dots;
+                }
+
+                .circle-container{
+                    display: flex;
+                    align-items: center;
+                    gap: rem(24);
+    
                     @media screen and (max-width: rem(904)){
-                        max-width: none;
-                        margin-bottom: rem(40);
+                        justify-content: center;
+                    }
+    
+                    .circle{
+                        width: rem(15);
+                        height: rem(15);
+                        background-color: #979797;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+                    .circle.active{
+                        background-color: $White;
                     }
                 }
             }
-
-            .circle-container{
-                display: flex;
-                align-items: center;
-                gap: rem(24);
-
-                @media screen and (max-width: rem(904)){
-                    justify-content: center;
-                }
-
-                .circle{
-                    width: rem(15);
-                    height: rem(15);
-                    background-color: #979797;
-                    border-radius: 50%;
-                    cursor: pointer;
-                }
-                .circle.active{
-                    background-color: $White;
-                }
-            }
+            
 
             .crew-profile-image{
                 width: rem(453);
@@ -119,6 +172,13 @@
                 }
                 @media screen and (max-width: rem(904)){
                     justify-self: center;
+                }
+                @media screen and (max-width: rem(504)){
+                    width: 100%;
+                }
+                @media screen and (max-width: rem(375)){
+                    grid-area: crewImage;
+                    border-bottom: 1px solid #979797;
                 }
                 
 
