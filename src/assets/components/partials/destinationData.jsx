@@ -8,7 +8,7 @@ function DestinationData(props){
     return (
         <div className="destination container">
                 <div className="title">
-                    <h2 className="heading-5">
+                    <h2 className="heading-5 text-mobile">
                         <span className="span-1">01</span>PICK YOUR DESTINATION
                     </h2>
                 </div>

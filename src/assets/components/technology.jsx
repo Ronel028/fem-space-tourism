@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { technology } from '../../../data.json'
 
-import TechImage from '../images/technology/image-launch-vehicle-portrait.jpg'
-import LandScapeImage from '../images/technology/image-launch-vehicle-landscape.jpg'
-
 function Technology(){
 
     const [screenSize, setScreenSize] = useState(1440);
@@ -76,14 +73,13 @@ function Technology(){
             setScreenSize(window.innerWidth)
             getTechnologyInfo()
         })
-
     }, [screenSize])
 
     return(
         <section className="technology--container">
             <div className="technology container container-left py-1">
                 <div className="title container">
-                    <h2 className="heading-5">
+                    <h2 className="heading-5 text-mobile">
                         <span className="span-1">03</span>SPACE LAUNCH 101
                     </h2>
                 </div>

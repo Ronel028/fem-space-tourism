@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import SampleCrew from '../images/crew/image-anousheh-ansari.webp'
 import { crew } from '../../../data.json';
 
 function Crew(){
@@ -80,7 +79,7 @@ function Crew(){
         <section className="crew--container">
             <div className="crew container py-1">
                 <div className="title">
-                    <h2 className="heading-5">
+                    <h2 className="heading-5 text-mobile">
                         <span className="span-1">02</span>MEET YOUR CREW
                     </h2>
                 </div>

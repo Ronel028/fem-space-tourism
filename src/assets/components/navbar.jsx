@@ -147,7 +147,7 @@ function Navbar(){
                     </li>
 
                     <li
-                        className={active.technology ? 'active' : ''}
+                        className={active.tech ? 'active' : ''}
                     >
                         <a
                             name='technology'

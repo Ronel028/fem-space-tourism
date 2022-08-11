@@ -17,6 +17,12 @@
     @media screen and(max-width: rem(980)){
         padding-bottom: rem(97);
     }
+    @media screen and (max-width: rem(768)){
+        background-image: url('/src/assets/images/technology/background-technology-tablet.jpg');
+    }
+    @media screen and (max-width: rem(375)){
+        background-image: url('/src/assets/images/technology/background-technology-mobile.jpg');
+    }
 
     .technology{
         display: grid;
@@ -38,6 +44,9 @@
                 row-gap: rem(56);
                 grid-template-areas: 'image' 'info';
             }
+            @media screen and(max-width: rem(375)){
+                row-gap: rem(34);
+            }
 
             .technology-description{
                 display: grid;
@@ -51,13 +60,15 @@
                     grid-template-rows: repeat(2, auto);
                     row-gap: rem(44);
                 }
+                @media screen and(max-width: rem(375)){
+                    row-gap: 0;
+                }
 
                 .btn{
                     ul{
                         height: 100%;
                         display: flex;
                         flex-direction: column;
-                        justify-content: space-between;
                         align-items: center;
                         @media screen and(max-width: rem(980)){
                             flex-direction: row;
@@ -77,11 +88,18 @@
                             font-family: $font-bellefair;
                             color: $White;
                             transition: all 0.3s ease-in;
+                            margin-bottom: rem(31);
 
                             @media screen and(max-width: rem(980)){
                                 width: rem(60);
                                 height: rem(60);
                                 margin-right: rem(16);
+                            }
+                            @media screen and(max-width: rem(375)){
+                                width: rem(40);
+                                height: rem(40);
+                                font-size: rem(16);
+                                margin-bottom: rem(26);
                             }
                             &:last-child{
                                 @media screen and(max-width: rem(980)){
@@ -110,9 +128,14 @@
 
                     h5{
                         margin-bottom: rem(20);
+
+                        @media screen and(max-width: rem(375)){
+                            font-size: rem(14);
+                        }
                     }
                     h3{
                         margin-bottom: rem(41);
+                        text-transform: uppercase;
                         @media screen and (max-width: rem(1229)){
                             font-size: rem(48);
                         }
@@ -121,6 +144,10 @@
                         }
                         @media screen and(max-width: rem(980)){
                             font-size: rem(40);
+                        }
+                        @media screen and(max-width: rem(375)){
+                            font-size: rem(24);
+                            margin-bottom: rem(16);
                         }
                     }
                     p{
